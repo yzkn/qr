@@ -1,4 +1,5 @@
 #qr {
+    margin: 0px auto 0px auto;
     padding: 20px;
 }
 
@@ -9,13 +10,6 @@
     margin: 0px auto 0px auto;
     width: 320px;
     height: auto;
-}
-
-#msg {
-    margin: 0px;
-    padding: 10px;
-    background-color: lightgray;
-    text-align: center;
 }
 
 #canvas {

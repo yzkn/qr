@@ -11,8 +11,8 @@ const gen = () => {
         foreground: 'black',
         foregroundAlpha: 0.8,
         level: 'H',
-        // padding: 25,
-        // size: 500,
+        padding: 50,
+        size: 200,
     });
 };
 
