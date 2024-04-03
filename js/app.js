@@ -21,6 +21,8 @@ const read = () => {
     let canvas = document.getElementById("canvas");
     let ctx = canvas.getContext("2d");
     let msg = document.getElementById("result");
+    let link = document.getElementById("resultLink");
+    let linkBr = document.getElementById("resultLinkBr");
 
     const userMedia = { video: { facingMode: "environment" } };
     navigator.mediaDevices.getUserMedia(userMedia).then((stream) => {
@@ -45,6 +47,18 @@ const read = () => {
 
                 // msg.innerText = code.data;
                 msg.innerText = decoded;
+
+                if (decoded.startsWith('http')) {
+                    linkBr.classList.remove('hidden');
+                    link.classList.remove('hidden');
+                    link.innerText = decoded;
+                    link.setAttribute('href', decoded);
+                } else {
+                    linkBr.classList.add('hidden');
+                    link.classList.add('hidden');
+                    link.innerText = '';
+                    link.setAttribute('href', '');
+                }
 
                 video.pause();
                 return;
